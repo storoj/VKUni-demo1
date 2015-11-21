@@ -24,6 +24,7 @@ static NSString *const kCellIdentifier = @"Cell";
         _imageView.contentMode = UIViewContentModeScaleAspectFill;
         _imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _imageView.backgroundColor = [UIColor lightGrayColor];
+        _imageView.clipsToBounds = YES;
         [self.contentView addSubview:_imageView];
     }
     return self;
@@ -82,6 +83,28 @@ static NSString *const kCellIdentifier = @"Cell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PhotoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdentifier forIndexPath:indexPath];
+    
+    VKPhoto *photo = self.photos[indexPath.item];
+    VKPhotoSize *photoSize = [photo.sizes photoSizeWithType:@"x"];
+    NSString *urlString = photoSize.src;
+    
+    if (urlString) {
+        [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]
+                                           queue:[NSOperationQueue mainQueue]
+                               completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+                                   if (data) {
+                                       dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                                           UIImage *image = [UIImage imageWithData:data];
+                                           if (image) {
+                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                   cell.imageView.image = image;
+                                               });
+                                           }
+                                       });
+                                   }
+                               }];
+    }
+    
     return cell;
 }
 
