@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <VKSdkFramework/VKSdk.h>
+#import "PhotosLayout.h"
 
 static NSString *const kCellIdentifier = @"Cell";
 
@@ -41,7 +42,7 @@ static NSString *const kCellIdentifier = @"Cell";
 
 
 
-@interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegatePhotosLayout>
 @property (nonatomic, strong) NSMutableArray *photos;
 @property (nonatomic, strong) UICollectionView *collectionView;
 
@@ -59,7 +60,7 @@ static NSString *const kCellIdentifier = @"Cell";
 }
 
 - (void)loadView {
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:[UICollectionViewFlowLayout new]];
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:[PhotosLayout new]];
     collectionView.dataSource = self;
     collectionView.delegate = self;
     
@@ -152,6 +153,22 @@ static NSString *const kCellIdentifier = @"Cell";
 
 - (void)loadNextPhotos {
     [self loadPhotosWithOffset:[self.photos count] count:20];
+}
+
+#pragma mark PhotosLayout
+
+- (CGFloat)photoLayout:(PhotosLayout *)layout aspectRatioForItemAtIndexPath:(NSIndexPath *)indexPath {
+    VKPhoto *photo = self.photos[indexPath.item];
+    
+    VKPhotoSize *size = [photo.sizes photoSizeWithType:@"x"];
+    const CGFloat w = [size.width doubleValue];
+    const CGFloat h = [size.height doubleValue];
+    
+    if (w > 0 && h > 0) {
+        return w/h;
+    } else {
+        return 1.f;
+    }
 }
 
 @end
