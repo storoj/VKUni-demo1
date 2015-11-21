@@ -12,5 +12,6 @@
 
 - (void)each:(void(^)(T object))block;
 - (NSArray *)map:(id(^)(T object))block;
+- (void)enumerateSlicesOfCount:(NSUInteger)count withBlock:(void(^)(NSUInteger idx, NSArray <T>*slice))block;
 
 @end

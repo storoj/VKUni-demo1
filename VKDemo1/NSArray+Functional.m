@@ -24,4 +24,25 @@
     return result;
 }
 
+- (void)enumerateSlicesOfCount:(NSUInteger)count withBlock:(void(^)(NSUInteger idx, NSArray *slice))block {
+    const NSUInteger numberOfItems = [self count];
+    if (numberOfItems == 0) {
+        return;
+    }
+    
+    NSRange range = NSMakeRange(0, 0);
+    NSUInteger idx = 0;
+    do {
+        range.location += range.length;
+        if (range.location < numberOfItems) {
+            range.length = MIN(count, numberOfItems-range.location);
+            
+            if (range.length > 0) {
+                block(idx++, [self subarrayWithRange:range]);
+            }
+        }
+        
+    } while (range.location < numberOfItems);
+}
+
 @end
