@@ -14,6 +14,7 @@ static NSString *const kCellIdentifier = @"Cell";
 
 @interface PhotoCell : UICollectionViewCell
 @property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) NSObject *marker;
 @end
 
 @implementation PhotoCell
@@ -90,6 +91,9 @@ static NSString *const kCellIdentifier = @"Cell";
     NSString *urlString = photoSize.src;
     
     if (urlString) {
+        
+        NSObject *marker = [NSObject new];
+        cell.marker = marker;
         [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]
                                            queue:[NSOperationQueue mainQueue]
                                completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
@@ -98,7 +102,17 @@ static NSString *const kCellIdentifier = @"Cell";
                                            UIImage *image = [UIImage imageWithData:data];
                                            if (image) {
                                                dispatch_async(dispatch_get_main_queue(), ^{
-                                                   cell.imageView.image = image;
+                                                   if (cell.marker == marker) {
+                                                       cell.imageView.image = image;
+                                                       
+                                                       
+                                                       CATransition *animation = [CATransition animation];
+                                                       animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+                                                       animation.type = kCATransitionFade;
+                                                       animation.duration = 0.25f;
+                                                       
+                                                       [cell.imageView.layer addAnimation:animation forKey:nil];
+                                                   }
                                                });
                                            }
                                        });
