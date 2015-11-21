@@ -39,8 +39,9 @@
 
 @implementation PhotosLayout
 {
-    NSArray *_attributes;
     CGSize _size;
+    NSArray <NSNumber *> *_offsets;
+    NSArray <NSArray <UICollectionViewLayoutAttributes *>*>* _attributeGroups;
 }
 
 - (void)prepareLayout {
@@ -59,9 +60,14 @@
     
     _size = CGSizeZero;
     
-    NSMutableArray *attributes = [NSMutableArray array];
+    NSMutableArray *attributeGroups = [NSMutableArray array];
+    NSMutableArray *offsets = [NSMutableArray array];
+    
     [thumbnails enumerateSlicesOfCount:batchSize withBlock:^(NSUInteger batchIdx, NSArray *slice) {
         const CGFloat yOffset = _size.height + 10;
+        [offsets addObject:@(yOffset)];
+        
+        NSMutableArray *group = [NSMutableArray array];
         
         EnumerateFramesForThumbnails(slice, pageSize, ^(NSUInteger idx, ThumbnailDescription *thumbnail, CGRect frame) {
             frame = CGRectOffset(frame, 0, yOffset);
@@ -69,18 +75,50 @@
             UICollectionViewLayoutAttributes *attrs = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:thumbnail.indexPath];
             attrs.frame = frame;
             
-            [attributes addObject:attrs];
+            [group addObject:attrs];
             
             _size.width = MAX(_size.width, CGRectGetMaxX(frame));
             _size.height = MAX(_size.height, CGRectGetMaxY(frame));
         });
+        
+        [attributeGroups addObject:[group copy]];
     }];
     
-    _attributes = [attributes copy];
+    _attributeGroups = [attributeGroups copy];
+    _offsets = [offsets copy];
 }
 
 - (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect {
-    return _attributes;
+    if ([_offsets count] == 0) {
+        return nil;
+    }
+    
+    const NSUInteger idx = [_offsets indexOfObject:@(rect.origin.y)
+                                     inSortedRange:NSMakeRange(0, [_offsets count])
+                                           options:NSBinarySearchingInsertionIndex
+                                   usingComparator:^NSComparisonResult(NSNumber *obj1, NSNumber *obj2) {
+                                       return [obj1 compare:obj2];
+                                   }];
+    
+    NSMutableArray *result = [NSMutableArray array];
+    
+    {
+        NSUInteger bottomIdx = idx;
+        while (bottomIdx < [_offsets count] && [_offsets[bottomIdx] doubleValue] < CGRectGetMaxY(rect)) {
+            [result addObjectsFromArray:_attributeGroups[bottomIdx]];
+            bottomIdx++;
+        }
+    }
+    
+    {
+        NSInteger upperIdx = idx;
+        while (upperIdx >= 0 && [_offsets[upperIdx] doubleValue] > CGRectGetMinY(rect)) {
+            [result addObjectsFromArray:_attributeGroups[upperIdx]];
+            upperIdx--;
+        }
+    }
+    
+    return [result copy];
 }
 
 - (CGSize)collectionViewContentSize {
