@@ -10,7 +10,6 @@
 		324A99FE1C0027E800183EAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 324A99FD1C0027E800183EAA /* main.m */; };
 		324A9A011C0027E800183EAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 324A9A001C0027E800183EAA /* AppDelegate.m */; };
 		324A9A041C0027E800183EAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 324A9A031C0027E800183EAA /* ViewController.m */; };
-		324A9A071C0027E800183EAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 324A9A051C0027E800183EAA /* Main.storyboard */; };
 		324A9A091C0027E800183EAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 324A9A081C0027E800183EAA /* Assets.xcassets */; };
 		324A9A0C1C0027E800183EAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 324A9A0A1C0027E800183EAA /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -22,7 +21,6 @@
 		324A9A001C0027E800183EAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		324A9A021C0027E800183EAA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		324A9A031C0027E800183EAA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		324A9A061C0027E800183EAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		324A9A081C0027E800183EAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		324A9A0B1C0027E800183EAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		324A9A0D1C0027E800183EAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 				324A9A001C0027E800183EAA /* AppDelegate.m */,
 				324A9A021C0027E800183EAA /* ViewController.h */,
 				324A9A031C0027E800183EAA /* ViewController.m */,
-				324A9A051C0027E800183EAA /* Main.storyboard */,
 				324A9A081C0027E800183EAA /* Assets.xcassets */,
 				324A9A0A1C0027E800183EAA /* LaunchScreen.storyboard */,
 				324A9A0D1C0027E800183EAA /* Info.plist */,
@@ -138,7 +135,6 @@
 			files = (
 				324A9A0C1C0027E800183EAA /* LaunchScreen.storyboard in Resources */,
 				324A9A091C0027E800183EAA /* Assets.xcassets in Resources */,
-				324A9A071C0027E800183EAA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,14 +154,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		324A9A051C0027E800183EAA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				324A9A061C0027E800183EAA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		324A9A0A1C0027E800183EAA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -213,7 +201,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -250,7 +238,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -265,6 +253,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vk.VKDemo1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -276,6 +265,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vk.VKDemo1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
