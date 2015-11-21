@@ -17,6 +17,7 @@
 		324A9A1C1C00291700183EAA /* ThumbnailsLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 324A9A1B1C00291700183EAA /* ThumbnailsLayout.m */; };
 		324A9A2A1C0029D900183EAA /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324A9A291C0029D300183EAA /* VKSdkFramework.framework */; };
 		324A9A2B1C0029D900183EAA /* VKSdkFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 324A9A291C0029D300183EAA /* VKSdkFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		324A9A311C00343800183EAA /* PhotosLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 324A9A301C00343800183EAA /* PhotosLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		324A9A1A1C00291700183EAA /* ThumbnailsLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbnailsLayout.h; sourceTree = "<group>"; };
 		324A9A1B1C00291700183EAA /* ThumbnailsLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbnailsLayout.m; sourceTree = "<group>"; };
 		324A9A1D1C0029D200183EAA /* VK-ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "VK-ios-sdk.xcodeproj"; path = "VKSDK/VK-ios-sdk.xcodeproj"; sourceTree = "<group>"; };
+		324A9A2F1C00343800183EAA /* PhotosLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosLayout.h; sourceTree = "<group>"; };
+		324A9A301C00343800183EAA /* PhotosLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				324A9A001C0027E800183EAA /* AppDelegate.m */,
 				324A9A021C0027E800183EAA /* ViewController.h */,
 				324A9A031C0027E800183EAA /* ViewController.m */,
+				324A9A2F1C00343800183EAA /* PhotosLayout.h */,
+				324A9A301C00343800183EAA /* PhotosLayout.m */,
 				324A9A1A1C00291700183EAA /* ThumbnailsLayout.h */,
 				324A9A1B1C00291700183EAA /* ThumbnailsLayout.m */,
 				324A9A081C0027E800183EAA /* Assets.xcassets */,
@@ -262,6 +267,7 @@
 			files = (
 				324A9A1C1C00291700183EAA /* ThumbnailsLayout.m in Sources */,
 				324A9A191C0028D600183EAA /* NSDictionary+Functional.m in Sources */,
+				324A9A311C00343800183EAA /* PhotosLayout.m in Sources */,
 				324A9A041C0027E800183EAA /* ViewController.m in Sources */,
 				324A9A181C0028D600183EAA /* NSArray+Functional.m in Sources */,
 				324A9A011C0027E800183EAA /* AppDelegate.m in Sources */,
