@@ -15,7 +15,54 @@
 		324A9A181C0028D600183EAA /* NSArray+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 324A9A151C0028D600183EAA /* NSArray+Functional.m */; };
 		324A9A191C0028D600183EAA /* NSDictionary+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 324A9A171C0028D600183EAA /* NSDictionary+Functional.m */; };
 		324A9A1C1C00291700183EAA /* ThumbnailsLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 324A9A1B1C00291700183EAA /* ThumbnailsLayout.m */; };
+		324A9A2A1C0029D900183EAA /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324A9A291C0029D300183EAA /* VKSdkFramework.framework */; };
+		324A9A2B1C0029D900183EAA /* VKSdkFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 324A9A291C0029D300183EAA /* VKSdkFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		324A9A241C0029D300183EAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 324A9A1D1C0029D200183EAA /* VK-ios-sdk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3C7542D182133CC00964716;
+			remoteInfo = VKSdk;
+		};
+		324A9A261C0029D300183EAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 324A9A1D1C0029D200183EAA /* VK-ios-sdk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3BACC401865905B003158DA;
+			remoteInfo = VKSdkResources;
+		};
+		324A9A281C0029D300183EAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 324A9A1D1C0029D200183EAA /* VK-ios-sdk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F34670311B8B7C5A003EF74B;
+			remoteInfo = VKSdkFramework;
+		};
+		324A9A2C1C0029D900183EAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 324A9A1D1C0029D200183EAA /* VK-ios-sdk.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F34670301B8B7C5A003EF74B;
+			remoteInfo = VKSdkFramework;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		324A9A2E1C0029D900183EAA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				324A9A2B1C0029D900183EAA /* VKSdkFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		324A99F91C0027E800183EAA /* VKDemo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKDemo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,6 +80,7 @@
 		324A9A171C0028D600183EAA /* NSDictionary+Functional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Functional.m"; sourceTree = "<group>"; };
 		324A9A1A1C00291700183EAA /* ThumbnailsLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbnailsLayout.h; sourceTree = "<group>"; };
 		324A9A1B1C00291700183EAA /* ThumbnailsLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbnailsLayout.m; sourceTree = "<group>"; };
+		324A9A1D1C0029D200183EAA /* VK-ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "VK-ios-sdk.xcodeproj"; path = "VKSDK/VK-ios-sdk.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				324A9A2A1C0029D900183EAA /* VKSdkFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,6 +98,7 @@
 		324A99F01C0027E800183EAA = {
 			isa = PBXGroup;
 			children = (
+				324A9A1D1C0029D200183EAA /* VK-ios-sdk.xcodeproj */,
 				324A99FB1C0027E800183EAA /* VKDemo1 */,
 				324A99FA1C0027E800183EAA /* Products */,
 			);
@@ -99,6 +149,16 @@
 			name = Functional;
 			sourceTree = "<group>";
 		};
+		324A9A1E1C0029D200183EAA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				324A9A251C0029D300183EAA /* libVKSdk.a */,
+				324A9A271C0029D300183EAA /* VKSdkResources.bundle */,
+				324A9A291C0029D300183EAA /* VKSdkFramework.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,10 +169,12 @@
 				324A99F51C0027E800183EAA /* Sources */,
 				324A99F61C0027E800183EAA /* Frameworks */,
 				324A99F71C0027E800183EAA /* Resources */,
+				324A9A2E1C0029D900183EAA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				324A9A2D1C0029D900183EAA /* PBXTargetDependency */,
 			);
 			name = VKDemo1;
 			productName = VKDemo1;
@@ -144,12 +206,42 @@
 			mainGroup = 324A99F01C0027E800183EAA;
 			productRefGroup = 324A99FA1C0027E800183EAA /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 324A9A1E1C0029D200183EAA /* Products */;
+					ProjectRef = 324A9A1D1C0029D200183EAA /* VK-ios-sdk.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				324A99F81C0027E800183EAA /* VKDemo1 */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		324A9A251C0029D300183EAA /* libVKSdk.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libVKSdk.a;
+			remoteRef = 324A9A241C0029D300183EAA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		324A9A271C0029D300183EAA /* VKSdkResources.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = VKSdkResources.bundle;
+			remoteRef = 324A9A261C0029D300183EAA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		324A9A291C0029D300183EAA /* VKSdkFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = VKSdkFramework.framework;
+			remoteRef = 324A9A281C0029D300183EAA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		324A99F71C0027E800183EAA /* Resources */ = {
@@ -178,6 +270,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		324A9A2D1C0029D900183EAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = VKSdkFramework;
+			targetProxy = 324A9A2C1C0029D900183EAA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		324A9A0A1C0027E800183EAA /* LaunchScreen.storyboard */ = {
