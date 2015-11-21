@@ -14,6 +14,7 @@
 		324A9A0C1C0027E800183EAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 324A9A0A1C0027E800183EAA /* LaunchScreen.storyboard */; };
 		324A9A181C0028D600183EAA /* NSArray+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 324A9A151C0028D600183EAA /* NSArray+Functional.m */; };
 		324A9A191C0028D600183EAA /* NSDictionary+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 324A9A171C0028D600183EAA /* NSDictionary+Functional.m */; };
+		324A9A1C1C00291700183EAA /* ThumbnailsLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 324A9A1B1C00291700183EAA /* ThumbnailsLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		324A9A151C0028D600183EAA /* NSArray+Functional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Functional.m"; sourceTree = "<group>"; };
 		324A9A161C0028D600183EAA /* NSDictionary+Functional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Functional.h"; sourceTree = "<group>"; };
 		324A9A171C0028D600183EAA /* NSDictionary+Functional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Functional.m"; sourceTree = "<group>"; };
+		324A9A1A1C00291700183EAA /* ThumbnailsLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbnailsLayout.h; sourceTree = "<group>"; };
+		324A9A1B1C00291700183EAA /* ThumbnailsLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbnailsLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				324A9A001C0027E800183EAA /* AppDelegate.m */,
 				324A9A021C0027E800183EAA /* ViewController.h */,
 				324A9A031C0027E800183EAA /* ViewController.m */,
+				324A9A1A1C00291700183EAA /* ThumbnailsLayout.h */,
+				324A9A1B1C00291700183EAA /* ThumbnailsLayout.m */,
 				324A9A081C0027E800183EAA /* Assets.xcassets */,
 				324A9A0A1C0027E800183EAA /* LaunchScreen.storyboard */,
 				324A9A0D1C0027E800183EAA /* Info.plist */,
@@ -163,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				324A9A1C1C00291700183EAA /* ThumbnailsLayout.m in Sources */,
 				324A9A191C0028D600183EAA /* NSDictionary+Functional.m in Sources */,
 				324A9A041C0027E800183EAA /* ViewController.m in Sources */,
 				324A9A181C0028D600183EAA /* NSArray+Functional.m in Sources */,
