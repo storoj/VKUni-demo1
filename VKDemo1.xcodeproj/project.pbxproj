@@ -12,6 +12,8 @@
 		324A9A041C0027E800183EAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 324A9A031C0027E800183EAA /* ViewController.m */; };
 		324A9A091C0027E800183EAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 324A9A081C0027E800183EAA /* Assets.xcassets */; };
 		324A9A0C1C0027E800183EAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 324A9A0A1C0027E800183EAA /* LaunchScreen.storyboard */; };
+		324A9A181C0028D600183EAA /* NSArray+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 324A9A151C0028D600183EAA /* NSArray+Functional.m */; };
+		324A9A191C0028D600183EAA /* NSDictionary+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 324A9A171C0028D600183EAA /* NSDictionary+Functional.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		324A9A081C0027E800183EAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		324A9A0B1C0027E800183EAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		324A9A0D1C0027E800183EAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		324A9A141C0028D600183EAA /* NSArray+Functional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Functional.h"; sourceTree = "<group>"; };
+		324A9A151C0028D600183EAA /* NSArray+Functional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Functional.m"; sourceTree = "<group>"; };
+		324A9A161C0028D600183EAA /* NSDictionary+Functional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Functional.h"; sourceTree = "<group>"; };
+		324A9A171C0028D600183EAA /* NSDictionary+Functional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Functional.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 		324A99FB1C0027E800183EAA /* VKDemo1 */ = {
 			isa = PBXGroup;
 			children = (
+				324A9A131C0028CC00183EAA /* Functional */,
 				324A99FF1C0027E800183EAA /* AppDelegate.h */,
 				324A9A001C0027E800183EAA /* AppDelegate.m */,
 				324A9A021C0027E800183EAA /* ViewController.h */,
@@ -74,6 +81,17 @@
 				324A99FD1C0027E800183EAA /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		324A9A131C0028CC00183EAA /* Functional */ = {
+			isa = PBXGroup;
+			children = (
+				324A9A141C0028D600183EAA /* NSArray+Functional.h */,
+				324A9A151C0028D600183EAA /* NSArray+Functional.m */,
+				324A9A161C0028D600183EAA /* NSDictionary+Functional.h */,
+				324A9A171C0028D600183EAA /* NSDictionary+Functional.m */,
+			);
+			name = Functional;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,7 +163,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				324A9A191C0028D600183EAA /* NSDictionary+Functional.m in Sources */,
 				324A9A041C0027E800183EAA /* ViewController.m in Sources */,
+				324A9A181C0028D600183EAA /* NSArray+Functional.m in Sources */,
 				324A9A011C0027E800183EAA /* AppDelegate.m in Sources */,
 				324A99FE1C0027E800183EAA /* main.m in Sources */,
 			);
